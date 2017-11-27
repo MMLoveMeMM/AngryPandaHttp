@@ -17,7 +17,7 @@ size_t save_header(void *ptr, size_t size, size_t nmemb, void *data)
 {
     char *pdata = (char*)ptr;
     std::cout<<pdata<<std::endl;
-
+    LOGI("save_header : %s",pdata);
     return (size * nmemb);
 }
 
@@ -54,6 +54,7 @@ size_t my_trace(CURL *handle, curl_infotype type,
             return 0;
     }
     std::cout<<text<<std::endl;
+    LOGI("http response : %s",text);
     return size;
 }
 /*

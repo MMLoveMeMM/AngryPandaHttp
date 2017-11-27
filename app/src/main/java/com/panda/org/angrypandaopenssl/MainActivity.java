@@ -1,8 +1,12 @@
 package com.panda.org.angrypandaopenssl;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.panda.org.http2wrapper.Http2Activity;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -53,4 +57,13 @@ public class MainActivity extends Activity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, Http2Activity.class);
+        this.startActivity(intent);
+
+    }
 }
